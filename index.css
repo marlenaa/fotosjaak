@@ -1,0 +1,121 @@
+body
+{
+background:beige;
+}
+h1
+{
+color:#FFFFFF;
+font-weight:;
+text-shadow: 0px 0px 3px Red;
+}
+red
+{
+color:#FF0000;
+font-weight:bold;
+text-shadow: 0px 0px 3px Red;
+}
+
+input
+{
+background-color: #FFFFFF; font-size: 8pt; color: black; font-family: Tahoma; border: 1px solid #66;
+}
+
+table#register
+{
+background-color: beige; font-size: 12pt; color: black; font-family: Comic Sans; 
+border-style:solid;
+border-color:black;
+border-collapse:collapse;
+padding:200px;
+}
+
+table#register td, th
+{
+border:1px solid black;
+}
+
+table.login
+{
+background-color: beige; font-size: 12pt; color: black; font-family: Comic Sans; 
+border-style:solid;
+border-color:black;
+border-collapse:collapse;
+padding:200px;
+}
+
+table.login td, th
+{
+border:1px solid black;
+}
+
+div#header
+{
+	background-color:beige;
+	background-image: url(images/banner1.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	border:5px solid LightBlue ;
+	border-style:dashed;
+	height:100px;
+	border-radius:25px;
+	
+}
+
+div#container
+{
+	width:900px;
+	margin:0 auto;
+	border-style:dashed;
+	border-radius:25px;
+	
+}
+div#container_1
+{
+	border:2px solid LightBlue;
+	border-radius:25px;
+	text-align:justify;
+	width:600px;
+	margin:0 auto;
+	position:relative;
+	min-height:500px;
+	font-family:Comic Sans MS;
+	background:url(images/tree.png) no-repeat; 
+	
+}
+div#links
+{
+	border:2px solid lightblue;	
+	border-radius:25px;
+	left:-150px;
+	width: 146px;
+	position:absolute;
+	min-height:500px;
+	font-family:Comic Sans MS;
+}
+div#link ul
+{
+}
+
+
+
+div#container_2
+{
+	width:400px;
+	margin:0 auto;
+
+}
+table.simple
+{
+	border-collapse: collapse;
+	font-family:Comic Sans MS;
+	
+}
+table.simple td, th
+{
+	text-align:center;
+	padding:0.3em;
+	border:2px solid black;
+	position:center;
+	margin:0 auto;
+	
+}
