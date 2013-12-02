@@ -15,7 +15,28 @@
 						//er word een database geselecteerd
 			mysql_select_db(DATABASE, $this->db_connection) or die ('MySqlDatabaseClass, database niet geselecteerd');
 		}
+	
+	//deze functie mkrijg je als argument mee
+	public function fire_query($query)
+	{
+	$result = mysql_query($query) or die ('MySqlDatabase:' .mysql_error());
+	return $result;
 	}
+	}
+	$database = new MySqlDatabaseClass();
+	
+	$query = "SELECT * FROM `login`";
+	
+	
+	$result = $database->fire_query($query);
+	
 
 
+?>
+<h3>Dit is de databasetestpagina</h3>
+<?php
+while ($record = mysql_fetch_array($result))
+{
+	echo $record['password']."<br>";
+}
 ?>
