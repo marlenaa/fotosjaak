@@ -8,7 +8,7 @@ a:active {color:##FFDEAD;}  /* selected link */
 </style>
 <ul class="a">
 	<li><a href="index.php?content=homepage">home</a></li>
-	<li><a href="index.php?content=class/MySqlDatabaseClass">db-class test</a></li>
+	<li><a href="index.php?content=logintest">login test</a></li>
 	<?php 
 	if (isset($_SESSION['userrole']))
 	{

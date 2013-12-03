@@ -25,18 +25,5 @@
 	}
 	$database = new MySqlDatabaseClass();
 	
-	$query = "SELECT * FROM `login`";
 	
-	
-	$result = $database->fire_query($query);
-	
-
-
-?>
-<h3>Dit is de databasetestpagina</h3>
-<?php
-while ($record = mysql_fetch_array($result))
-{
-	echo $record['password']."<br>";
-}
 ?>
