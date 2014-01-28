@@ -5,7 +5,7 @@
 
 <center>
 <h2>
-Dit is de coworker homepage.<br>
+Dit is de coworker_homepage.<br>
 uw id is: <?php  echo $_SESSION['id']; ?><br>
 uw gebruikersrol is: <?php echo $_SESSION['userrole']; ?>
 </h2>
