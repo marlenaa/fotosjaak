@@ -1,4 +1,4 @@
-<?.html
+<?php
 	if ($_POST["bewerking"] == "1")
 	{
 		$bewerking = "opgeteld";
@@ -25,8 +25,9 @@
 	}
 ?>
 
-<h3>De twee getallen worden <?.html echo $bewerking; ?></h3>
-<?.html
+<h3>De twee getallen worden <?php echo $bewerking; ?></h3>
+</html>
+<?php
 	echo $_POST["getal1"].$teken.$_POST["getal2"]." = ".$uitkomst."<br>";
 ?>
 <a href="index..html">opnieuw</a>

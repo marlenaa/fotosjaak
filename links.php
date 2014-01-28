@@ -16,14 +16,23 @@ a:active {color:##FFDEAD;}  /* selected link */
 		switch ($_SESSION['userrole'] )
 		{
 			case 'customer':
-				echo "<li><a href='index.php?content=downloadpage'>download game </a></li>";
 				echo "<li><a href='index.php?content=homepage_customer'>customer homepage </a></li>";
 				echo "<li><a href='index.php?content=faq'>FAQ </a></li>";
 				echo "<li><a href='index.php?content=cp'>Change Password </a></li>";
+				echo "<li><a href='index.php?content=opdracht'>Opdracht</a></li>";
 				
 			break;
 			
 			case 'admin':
+				echo "<li><a href='index.php?content=homepage_admin'>admin homepage </a></li>";
+			break;
+			
+			case 'photographer':
+				echo "<li><a href='index.php?content=homepage_photographer'>photographer homepage </a></li>";
+			break;
+			
+			case 'developer':
+				echo "<li><a href='index.php?content=homepage_developer'>developer homepage </a></li>";
 			break;
 			
 			case 'root':

@@ -1,4 +1,24 @@
 <?php
+
+	require_once("class/LoginClass.php");
+
+	if(LoginClass::check_if_email_exists($_POST['email']))
+	{
+		//Het email bestaat al terugsturen naar de registratie pagina
+		echo"Het ingevulde email adres bestaat al,<br> U word terug gestuurd naar de registratie pagina.";
+		header("refresh:5;url=index.php?content=register_form");
+	}
+	else
+	{
+		LoginClass::insert_into_loginClass($_POST);
+		
+		//Schrijf weg naar database
+		echo("u bent succesvol geregistreerd. U ontvangt een activatielink in uw email, <br>
+			na het activeren van uw account kunt u inloggen.");
+			header("refresh:5;url=index.php?content=login_form");
+	}
+
+/*
 	//hiermee kan je zien wat er is verstuurd
 			//var_dump($_POST);
 			
@@ -9,7 +29,7 @@
 	//hiermee kies je een database.
 	mysql_select_db("am1a", $db) or die ("database is niet gevonden");
 	
-	$sql = "INSERT INTO `users` (		`id`, 
+	$sql = "INSERT INTO `user` (		`id`, 
 										`firstname`, 
 										`infix`, 
 										`surname`, 
@@ -45,6 +65,5 @@
  {
  echo "Error";
  }
- header("refresh:6; url=index.php");
- mysql_query($sql, $db) or die (mysql_error());
+ header("refresh:6; url=index.php");*/
 ?>

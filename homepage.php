@@ -1,17 +1,14 @@
 <center>
 <h2>
-Hai, mijn naam is marlena en ik bouw een website.
-Hai, mijn naam is marlena en ik bouw een website.
-Hai, mijn naam is marlena en ik bouw een website.
-Hai, mijn naam is marlena en ik bouw een website.
-Hai, mijn naam is marlena en ik bouw een website.
-Hai, mijn naam is marlena en ik bouw een website.
-Hai, mijn naam is marlena en ik bouw een website.
-Hai, mijn naam is marlena en ik bouw een website.
-Hai, mijn naam is marlena en ik bouw een website.
-Hai, mijn naam is marlena en ik bouw een website.
-Hai, mijn naam is marlena en ik bouw een website.
-Hai, mijn naam is marlena en ik bouw een website.
-hai.
+	<script>
+	  $(function() {
+	    $( "#dialog" ).dialog();
+	  });
+  	</script>
+
+<div id="dialog" title="Fotosjaak">
+  <p>Dit is een dialoog, deze kan je verslepen en wegklikken.</p>
+</div>
+<p>Dit is de homepage.</p>
 </h2>
 </center>
