@@ -36,7 +36,11 @@ a:active {color:##FFDEAD;}  /* selected link */
 			break;
 			
 			case 'root':
-			echo "<li><a href='index.php?content=bekijken'>Users </a></li>";
+				echo "<li><a href='index.php?content=bekijken'>Users </a></li>";
+			break;
+			
+			case 'coworker':
+				echo "<li><a href='index.php?content=pandabeer'>Pandabeer</a></li>";
 			break;
 		}
 	}

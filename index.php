@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html>
@@ -46,3 +47,12 @@
 	
 	</body>
 </html>
+=======
+<?php 
+	
+	echo "Dit is mijn eerste regel...";
+	echo "Dit is mijn 2e regel...";
+	echo "Dit is mijn derde regel...";
+
+?>
+>>>>>>> 0acb19d333c619af449e852111e359b3c9d4c9cf

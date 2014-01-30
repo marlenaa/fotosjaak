@@ -203,19 +203,11 @@
                 {
                         $to = $post_array['email'];
                         $subject = "Activatie website FotoSjaak";
-                        /*
-                        $message = "Geachte heer/mevrouw ".
-                                           $post_array['firstname']." ".
-                                           $post_array['infix']." ".
-                                           $post_array['surname']."\r\r\n";
-                        $message .= "Voor u kunt inloggen moet uw account nog worden geactiveerd.\r\n";
-                        $message .= "Klik hiervoor op de onderstaande link\r\n";
-                        $message .= "http://localhost/2013-2014/Blok2/AM1A/fotosjaak-am1a/index.php?content=activation&email=".$post_array['email']."&password=".$password."\r\n";
-                        $message .= "Met vriendelijke groet,\r\n";
-                        $message .= "Sjaak de Vries\r\n";
-                        $message .= "Uw fotograaf";     
-						 */ 
-						 $message = "<p>Geachte heer/mevrouw <b>".
+                        
+                        $to2 = $post_array['email'];
+                        $subject2 = "Activatie website FotoSjaak";
+                        
+						$message = "<p>Geachte heer/mevrouw <b>".
                                            $post_array['firstname']." ".
                                            $post_array['infix']." ".
                                            $post_array['surname']."</b></p>";
@@ -224,8 +216,17 @@
                         $message .= "<a href= 'http://localhost/Blok2/fotosjaak/index.php?content=activation&email=".$post_array['email']."&password=".$password."'>activeer je account</a><br><br>";
                         $message .= "Met vriendelijke groet,<br>";
                         $message .= "Sjaak de Vries<br>";
-                        $message .= "Uw fotograaf";  
-                        
+                        $message .= "Uw fotograaf"; 
+						 
+                        $message2 = "<p>Geachte heer/mevrouw <b>".
+                                           $post_array['firstname']." ".
+                                           $post_array['infix']." ".
+                                           $post_array['surname']."</b></p>";
+                        $message2 .= "bedankt voor het registreren.<br>";
+                        $message2 .= "<br>";
+                        $message2 .= "Met vriendelijke groet,<br>";
+                        $message2 .= "Sjaak de Vries<br>";
+                        $message2 .= "Uw fotograaf";  
                         
                         $headers  = "From: info@fotosjaak.nl\r\n";
                         $headers .= "Reply-To: info@fotosjaak.nl\r\n";
@@ -235,9 +236,21 @@
                         $headers .= "MIME-version: 1.0\r\n";
                         //$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
                         $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+						
+						$headers2  = "From: info@fotosjaak.nl\r\n";
+                        $headers2 .= "Reply-To: info@fotosjaak.nl\r\n";
+                        $headers2 .= "Cc: sjaak@fotosjaak.nl\r\n";
+                        $headers2 .= "Bcc: admin@fotosjaak.nl\r\n";
+                        $headers2 .= "X-mailer: PHP/".phpversion()."\r\n";
+                        $headers2 .= "MIME-version: 1.0\r\n";
+                        //$heade2rs .= "Content-type: text/plain; charset=iso-8859-1\r\n";
+                        $headers2 .= "Content-type: text/html; charset=iso-8859-1\r\n";
+						
+						 
+						  
                         mail($to, $subject, $message, $headers);
-                }          
-				
+						mail($to2, $subject2, $message2, $headers2);
+                } 
 				Public static function find_email_password_by_id()
 				{
 					$query = "SELECT * FROM `login` WHERE `id` = '".$_SESSION[ 'id' ]."'";
