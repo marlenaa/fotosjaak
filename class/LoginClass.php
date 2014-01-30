@@ -5,7 +5,7 @@
         // Hieronder de classdefinitie van de LoginClass
         class LoginClass
         {
-                //Fields
+                //Fieldssss
                 private $id;
                 private $email;
                 private $password;
