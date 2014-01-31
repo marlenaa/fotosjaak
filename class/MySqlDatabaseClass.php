@@ -1,4 +1,5 @@
 <?php
+//hiermee include je de config pagina
 	require_once('config/config.php');
 	class MySqlDatabaseClass
 	{
@@ -19,10 +20,12 @@
 	//deze functie mkrijg je als argument mee
 	public function fire_query($query)
 	{
+		//dit is het resultaat
 	$result = mysql_query($query) or die ('MySqlDatabase:' .mysql_error());
 	return $result;
 	}
 	}
+	//database
 	$database = new MySqlDatabaseClass();
 	
 	

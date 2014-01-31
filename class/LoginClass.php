@@ -70,7 +70,9 @@
                         $result = self::find_by_sql($query);
                         return $result;                        
                 }
-                
+                //met deze functie kijk je of het email adres niet al bestaat in de database
+                //als het resultaat groter dan 0 is, word er weergegeven dat het email adres al bestaat
+                //anders word er weergegeven dat het email niet in de database staat
                 public static function email_exists($emailaddress)
                 {
                         global $database;        
@@ -87,7 +89,9 @@
                                 return "Het e-mailadres bestaat niet in de database";
                         }                        
                 }
-                
+                //met deze functie kijk je of de combinatie van het email en password bestaat
+                //als het resultaat groter is dan 0 word weergegeven dat het kan
+                //anders word weergegeven dat false
                 public static function check_if_email_password_exists($email, $password)
                 {
                         global $database;
@@ -106,7 +110,7 @@
                                 return false;
                         }
                 }
-                 
+                 //hiermee kan je een user zoeken op email
                 public static function find_user_by_email_password($email, $password)
                 {
                         $query = "SELECT * 
@@ -117,7 +121,7 @@
                         $loginClassObjectInArray = self::find_by_sql($query);        
                         return $loginClassObject = array_shift($loginClassObjectInArray);
                 }
-                
+                //met deze functie kan je checken of de email al geactiveerd is
                 public static function check_if_account_is_activated($email,
                                                                                                                          $password)
                 {
@@ -141,7 +145,7 @@
                                 return false;
                         }
                 }
-                
+                //hiermee kijk je of de email bestaat
                 public static function check_if_email_exists($email)
                 {
                         global $database;        
@@ -168,7 +172,7 @@
                         // (vergelijking) ? waarde als waar : waarde als niet waar
                         // return (mysql_num_rows($result) > 0) ? true : false;
                 }
-                
+                //hiermee insert je een datum in de loginclass
                 public static function insert_into_loginClass($post_array)
                 {
                         global $database;
@@ -191,6 +195,7 @@
                                                                                            'customer',
                                                                                            'no',
                                                                                            '".$date."')";
+                        //hiermee word de query afgevuurd op de database
                         $database->fire_query($query);
                         
                         $id = mysql_insert_id();
@@ -198,7 +203,8 @@
                         UserClass::insert_into_userClass($post_array, $id);
                         self::send_activation_email($post_array, $hash_from_tmp_password);
                 }
-                
+                //met deze functie kan je een activatie mail sturen.
+                //daarvoor heb je nodig een $to, $subject, $message, $headers
                 public static function send_activation_email($post_array, $password)
                 {
                         $to = $post_array['email'];
@@ -246,11 +252,12 @@
                         //$heade2rs .= "Content-type: text/plain; charset=iso-8859-1\r\n";
                         $headers2 .= "Content-type: text/html; charset=iso-8859-1\r\n";
 						
-						 
-						  
+						 //mail is een al geschreven functie van php
+						 //hiermee stuur je ook echt een mail naar het opgegeven emailadres
                         mail($to, $subject, $message, $headers);
 						mail($to2, $subject2, $message2, $headers2);
                 } 
+                //hiermee kan je een email vinden door een id in te vullen
 				Public static function find_email_password_by_id()
 				{
 					$query = "SELECT * FROM `login` WHERE `id` = '".$_SESSION[ 'id' ]."'";
